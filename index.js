@@ -40,7 +40,9 @@ var hangman = {
   //yes to play start new game
   newGame: function() {
     if(this.guessesRemaining === 10) {
+      console.log("\n                   ");
       console.log("Okay! Here we go!");
+      console.log("\nHint: Harry Potter")
       console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
       //picks random word
       var randNum = Math.floor(Math.random()*this.wordBank.length);
@@ -90,7 +92,8 @@ var hangman = {
           var found = that.currentWord.checkLetters(letterGuessed);
           //checks if wrong do stuff
           if(found === 0){
-            console.log("You guessed WRONG.");
+      		console.log("\n                   ");
+          	console.log("You guessed WRONG.");
             that.guessesRemaining--;
             console.log('Guesses remaining: ' + that.guessesRemaining);
 
@@ -102,7 +105,8 @@ var hangman = {
           } 
           // guess was right do stuffS
           else{
-            console.log("You guessed RIGHT!");
+      		  console.log("\n                   ");
+          	  console.log("You guessed RIGHT!");
               //if guess was rigt check if word is solved
               if(that.currentWord.solvedWord() === true){
                 console.log("Current Word: " + that.currentWord.printWord());
